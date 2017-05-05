@@ -2,11 +2,16 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 
 
-app = QApplication(sys.argv)
+class MyWidget(QWidget):
+    def __init__(self):
+        QWidget.__init__(self)
+        self.resize(250, 150)
+        self.setWindowTitle('simple')
+        self.show()
 
-widget = QWidget()
-widget.resize(250, 150)
-widget.setWindowTitle('simple')
-widget.show()
+
+app = QApplication(sys.argv)
+main_window = MyWidget()
+
 
 sys.exit(app.exec_())
