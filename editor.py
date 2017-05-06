@@ -7,6 +7,7 @@ class MyWidget(QWidget):
         QWidget.__init__(self)
         self.resize(250, 150)
         self.setWindowTitle('simple')
+        self.setWindowIcon(QIcon('icon/web.png'))
         self.show()
 
 
