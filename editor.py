@@ -9,15 +9,21 @@ class MyWidget(QMainWindow):
         self.setWindowTitle('simple')
         self.setWindowIcon(QIcon('pencil.jpg'))
 
-        exitAction = QAction(QIcon('exit.png'), '&Exit', self)
-        exitAction.setShortcut('Ctrl+Q')
-        exitAction.setStatusTip('Exit application')
+        exitAction = QAction('Save', self)
+        exitAction.setShortcut('Ctrl+S')
+        exitAction.setStatusTip('Сохранить файл')
         exitAction.triggered.connect(qApp.quit)
+
+        saveAction = QAction('Exit', self)
+        saveAction.setShortcut('Ctrl+Q')
+        saveAction.setStatusTip('Выход из приложения')
+        saveAction.triggered.connect(qApp.quit)
 
         self.statusBar()
         menubar = self.menuBar()
-        fileMenu = menubar.addMenu('&File')
+        fileMenu = menubar.addMenu('&File')        
         fileMenu.addAction(exitAction)
+        fileMenu.addAction(saveAction)
         self.show()
 
 
