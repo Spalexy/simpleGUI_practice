@@ -6,7 +6,7 @@ class MyWidget(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.resize(250, 150)
-        self.setWindowTitle('simple')
+        self.setWindowTitle('Текстовый редактор')
         self.setWindowIcon(QIcon('pencil.jpg'))
 
         exitAction = QAction('Save', self)
