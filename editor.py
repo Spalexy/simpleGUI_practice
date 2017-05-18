@@ -3,6 +3,12 @@ from PyQt5.QtWidgets import QApplication, qApp, QMainWindow, QAction
 from PyQt5.QtGui import QIcon
 
 class MyWidget(QMainWindow):
+    """Главное окно.
+
+    Класс, создающий главное окно и элементы интерфейса.
+    Метод menu_bar создает графическое меню. 
+
+    """
     def __init__(self):
         QMainWindow.__init__(self)
         self.resize(250, 150)
