@@ -14,7 +14,10 @@ class MyWidget(QMainWindow):
         self.resize(250, 150)
         self.setWindowTitle('Текстовый редактор')
         self.setWindowIcon(QIcon('pencil.jpg'))
+        self.menu_bar()
+        self.show()
 
+    def menu_bar(self):
         exitAction = QAction('Save', self)
         exitAction.setShortcut('Ctrl+S')
         exitAction.setStatusTip('Сохранить файл')
@@ -25,12 +28,12 @@ class MyWidget(QMainWindow):
         saveAction.setStatusTip('Выход из приложения')
         saveAction.triggered.connect(qApp.quit)
 
-        self.statusBar()
+        # self.statusBar()
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&File')        
         fileMenu.addAction(exitAction)
         fileMenu.addAction(saveAction)
-        self.show()
+        
 
 
 app = QApplication(sys.argv)
