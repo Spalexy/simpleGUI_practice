@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, qApp, QMainWindow, QAction
+from PyQt5.QtWidgets import QApplication, qApp, QMainWindow, QAction, QTextEdit
 from PyQt5.QtGui import QIcon
+
 
 class MyWidget(QMainWindow):
     """Главное окно.
@@ -15,6 +16,9 @@ class MyWidget(QMainWindow):
         self.setWindowTitle('Текстовый редактор')
         self.setWindowIcon(QIcon('pencil.jpg'))
         self.menu_bar()
+        textEdit = QTextEdit()
+        self.setCentralWidget(textEdit)
+
         self.show()
 
     def menu_bar(self):
@@ -34,6 +38,7 @@ class MyWidget(QMainWindow):
         fileMenu.addAction(exitAction)
         fileMenu.addAction(saveAction)
         
+
 
 
 app = QApplication(sys.argv)
